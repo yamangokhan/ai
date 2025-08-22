@@ -134,21 +134,53 @@
             padding: 0 2rem;
         }
 
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 0 auto 2rem;
+            border: 4px solid transparent;
+            background: var(--gradient-1);
+            padding: 4px;
+            animation: slideInUp 1s ease;
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--dark-bg);
+        }
+
         .hero-content h1 {
             font-size: clamp(2rem, 5vw, 4rem);
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem;
             background: var(--gradient-1);
             background-clip: text;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            animation: slideInUp 1s ease;
+            animation: slideInUp 1s ease 0.1s both;
         }
 
         .hero-content .subtitle {
             font-size: clamp(1rem, 2.5vw, 1.5rem);
             color: var(--text-secondary);
-            margin-bottom: 2rem;
+            margin-bottom: 1rem;
             animation: slideInUp 1s ease 0.2s both;
+        }
+
+        .istqb-badge {
+            display: inline-block;
+            background: var(--gradient-2);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            margin-bottom: 2rem;
+            animation: slideInUp 1s ease 0.3s both;
+            box-shadow: 0 5px 15px rgba(240, 147, 251, 0.3);
         }
 
         .hero-content .description {
@@ -246,6 +278,95 @@
             border-radius: 20px;
             font-size: 0.9rem;
             border: 1px solid rgba(102, 126, 234, 0.3);
+        }
+
+        /* Certifications Banner */
+        .certifications-section {
+            background: rgba(15, 15, 35, 0.9);
+            padding: 3rem 0;
+            margin: 5rem 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .certifications-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            background: var(--gradient-1);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .certifications-slider {
+            display: flex;
+            animation: slideLeft 30s linear infinite;
+            gap: 2rem;
+        }
+
+        .certification-item {
+            min-width: 300px;
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 1.5rem;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .certification-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+            animation-play-state: paused;
+        }
+
+        .cert-logo {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-1);
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+        }
+
+        .cert-name {
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .cert-issuer {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .cert-year {
+            color: var(--accent-color);
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        @keyframes slideLeft {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .certifications-slider:hover {
+            animation-play-state: paused;
         }
 
         /* Projects Section */
@@ -416,6 +537,7 @@
             <ul class="nav-links">
                 <li><a href="#home">Ana Sayfa</a></li>
                 <li><a href="#skills">Yetenekler</a></li>
+                <li><a href="#certifications">Sertifikalar</a></li>
                 <li><a href="#projects">Projeler</a></li>
                 <li><a href="#experience">Deneyim</a></li>
                 <li><a href="#contact">İletişim</a></li>
@@ -425,11 +547,15 @@
 
     <section id="home" class="hero">
         <div class="hero-content">
+            <div class="profile-image">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cdefs%3E%3ClinearGradient id='grad1' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23667eea;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23764ba2;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='100' cy='100' r='90' fill='url(%23grad1)'/%3E%3Ctext x='100' y='115' font-family='Arial, sans-serif' font-size='60' font-weight='bold' text-anchor='middle' fill='white'%3EGY%3C/text%3E%3C/svg%3E" alt="Gökhan YAMAN">
+            </div>
             <h1>Gökhan YAMAN</h1>
-            <div class="subtitle">Test Automation Engineer</div>
+            <div class="subtitle">ISTQB© Certified Software Test Engineer</div>
+            <div class="istqb-badge">✓ ISTQB Foundation Level Certified</div>
             <div class="description">
                 3+ yıllık deneyimle yazılım kalitesi ve test otomasyonu alanında uzmanlaşmış, 
-                modern teknolojiler kullanarak güvenilir test süreçleri geliştiren bir mühendis.
+                ISTQB sertifikalı ve modern teknolojiler kullanarak güvenilir test süreçleri geliştiren bir mühendis.
             </div>
             <a href="#contact" class="cta-button">Benimle İletişime Geç</a>
         </div>
@@ -443,7 +569,7 @@
                 <p>Modern test otomasyon framework'leri ile kapsamlı test süreçleri geliştirme</p>
                 <div class="skill-tags">
                     <span class="skill-tag">Selenium WebDriver</span>
-                    <span class="skill-tag">WebDriverIO</span>                   
+                    <span class="skill-tag">WebDriverIO</span>
                     <span class="skill-tag">Cucumber</span>
                     <span class="skill-tag">Mocha</span>
                     <span class="skill-tag">TestNG</span>
@@ -457,17 +583,21 @@
                     <span class="skill-tag">Java</span>
                     <span class="skill-tag">TypeScript</span>
                     <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">XPath</span>
+                    <span class="skill-tag">CSS</span>
+                    <span class="skill-tag">SQL</span>
                 </div>
             </div>
             <div class="skill-card fade-in">
                 <h3>API Testing</h3>
-                <p>RESTful ve GraphQL API'ları için kapsamlı test stratejileri</p>
+                <p>RESTful API'ları için kapsamlı test stratejileri</p>
                 <div class="skill-tags">
                     <span class="skill-tag">Postman</span>
-                    <span class="skill-tag">RestAssured</span>
+                    <span class="skill-tag">REST Assured</span>
                     <span class="skill-tag">Newman</span>
                     <span class="skill-tag">Insomnia</span>
                     <span class="skill-tag">SoapUI</span>
+                    <span class="skill-tag">Swagger UI</span>
                 </div>
             </div>
             <div class="skill-card fade-in">
@@ -478,6 +608,8 @@
                     <span class="skill-tag">GitLab CI</span>
                     <span class="skill-tag">GitHub Actions</span>
                     <span class="skill-tag">Docker</span>
+                    <span class="skill-tag">BitBucket</span>
+                    <span class="skill-tag">GitHub</span>
                 </div>
             </div>
             <div class="skill-card fade-in">
@@ -491,82 +623,148 @@
                 </div>
             </div>
             <div class="skill-card fade-in">
-                <h3>Mobile Testing</h3>
-                <p>iOS ve Android platformları için kapsamlı test çözümleri</p>
+                <h3>Test Management & Tools</h3>
+                <p>Test yönetimi ve proje takip araçları</p>
                 <div class="skill-tags">
-                    <span class="skill-tag">Appium</span>
-                    <span class="skill-tag">Espresso</span>
-                    <span class="skill-tag">XCUITest</span>
-                    <span class="skill-tag">Detox</span>
+                    <span class="skill-tag">Jira</span>
+                    <span class="skill-tag">XRAY</span>
+                    <span class="skill-tag">Confluence</span>
+                    <span class="skill-tag">Trello</span>
+                    <span class="skill-tag">IntelliJ IDEA</span>
+                    <span class="skill-tag">Eclipse</span>
+                    <span class="skill-tag">Visual Studio</span>
                 </div>
             </div>
         </div>
     </section>
+
+    <div class="certifications-section" id="certifications">
+        <div class="certifications-title fade-in">Sertifikalarım</div>
+        <div class="certifications-slider">
+            <div class="certification-item">
+                <div class="cert-logo">ISTQB</div>
+                <div class="cert-name">ISTQB© Foundation Level</div>
+                <div class="cert-issuer">International Software Testing Qualifications Board</div>
+                <div class="cert-year">2024</div>
+            </div>
+            <div class="certification-item">
+                <div class="cert-logo">SEL</div>
+                <div class="cert-name">Selenium WebDriver</div>
+                <div class="cert-issuer">Test Automation Certification</div>
+                <div class="cert-year">2023</div>
+            </div>
+            <div class="certification-item">
+                <div class="cert-logo">API</div>
+                <div class="cert-name">REST API Testing</div>
+                <div class="cert-issuer">Postman & REST Assured</div>
+                <div class="cert-year">2023</div>
+            </div>
+            <div class="certification-item">
+                <div class="cert-logo">CUC</div>
+                <div class="cert-name">Cucumber BDD</div>
+                <div class="cert-issuer">Behavior Driven Development</div>
+                <div class="cert-year">2022</div>
+            </div>
+            <div class="certification-item">
+                <div class="cert-logo">AGI</div>
+                <div class="cert-name">Agile Testing</div>
+                <div class="cert-issuer">Scrum & Kanban Methodologies</div>
+                <div class="cert-year">2022</div>
+            </div>
+            <div class="certification-item">
+                <div class="cert-logo">JMT</div>
+                <div class="cert-name">JMeter Performance</div>
+                <div class="cert-issuer">Load & Performance Testing</div>
+                <div class="cert-year">2022</div>
+            </div>
+            <!-- Duplicate items for continuous scroll -->
+            <div class="certification-item">
+                <div class="cert-logo">ISTQB</div>
+                <div class="cert-name">ISTQB© Foundation Level</div>
+                <div class="cert-issuer">International Software Testing Qualifications Board</div>
+                <div class="cert-year">2024</div>
+            </div>
+            <div class="certification-item">
+                <div class="cert-logo">SEL</div>
+                <div class="cert-name">Selenium WebDriver</div>
+                <div class="cert-issuer">Test Automation Certification</div>
+                <div class="cert-year">2023</div>
+            </div>
+            <div class="certification-item">
+                <div class="cert-logo">API</div>
+                <div class="cert-name">REST API Testing</div>
+                <div class="cert-issuer">Postman & REST Assured</div>
+                <div class="cert-year">2023</div>
+            </div>
+        </div>
+    </div>
 
     <section id="projects" class="section">
         <h2 class="section-title fade-in">Projeler</h2>
         <div class="projects-grid">
             <div class="project-card fade-in">
                 <div class="project-header">
-                    <div class="project-title">E-Ticaret Test Otomasyon Sistemi</div>
+                    <div class="project-title">Birtech Angular Web App Test Suite</div>
                 </div>
                 <div class="project-content">
-                    <p>Büyük ölçekli e-ticaret platformu için kapsamlı test otomasyon çerçevesi. Page Object Model, Data-Driven Testing ve Parallel execution özelliklerini içerir.</p>
+                    <p>Angular tabanlı web uygulaması için Page Object Pattern ile sürdürülebilir UI test framework'ü. Selenium WebDriver ve Cucumber ile BDD yaklaşımı kullanılarak geliştirildi.</p>
                     <div class="project-tech">
                         <span class="tech-badge">Selenium</span>
                         <span class="tech-badge">Java</span>
+                        <span class="tech-badge">Cucumber</span>
                         <span class="tech-badge">TestNG</span>
-                        <span class="tech-badge">Maven</span>
+                        <span class="tech-badge">Jenkins</span>
+                        <span class="tech-badge">Jira XRAY</span>
+                    </div>
+                    <p><strong>Sonuçlar:</strong> End-to-end test automation, CI/CD entegrasyonu ile otomatik test raporlama</p>
+                </div>
+            </div>
+            <div class="project-card fade-in">
+                <div class="project-header">
+                    <div class="project-title">Hypnotes Therapist Platform Test Framework</div>
+                </div>
+                <div class="project-content">
+                    <p>Terapi platformu için kapsamlı test otomasyon çerçevesi. BDD Cucumber framework'ü ile Gherkin syntax kullanarak etkili test senaryoları oluşturuldu.</p>
+                    <div class="project-tech">
+                        <span class="tech-badge">Cucumber</span>
+                        <span class="tech-badge">Selenium</span>
+                        <span class="tech-badge">REST Assured</span>
+                        <span class="tech-badge">Jira XRAY</span>
+                        <span class="tech-badge">GitHub</span>
+                    </div>
+                    <p><strong>Sonuçlar:</strong> Cross-functional team collaboration, comprehensive test documentation</p>
+                </div>
+            </div>
+            <div class="project-card fade-in">
+                <div class="project-header">
+                    <div class="project-title">Multi-Platform API Test Suite</div>
+                </div>
+                <div class="project-content">
+                    <p>Multiple client projelerinde kullanılan RESTful API test otomasyon framework'ü. Postman ve REST Assured kullanarak comprehensive API testing.</p>
+                    <div class="project-tech">
+                        <span class="tech-badge">REST Assured</span>
+                        <span class="tech-badge">Postman</span>
+                        <span class="tech-badge">Java</span>
+                        <span class="tech-badge">TestNG</span>
                         <span class="tech-badge">Jenkins</span>
                     </div>
-                    <p><strong>Sonuçlar:</strong> Test süresini 80% azalttı, hata tespit oranını %95 artırdı</p>
+                    <p><strong>Sonuçlar:</strong> API test automation, schema validation, performance testing entegrasyonu</p>
                 </div>
             </div>
             <div class="project-card fade-in">
                 <div class="project-header">
-                    <div class="project-title">API Test Automation Framework</div>
+                    <div class="project-title">CI/CD Test Pipeline Integration</div>
                 </div>
                 <div class="project-content">
-                    <p>Microservices mimarisi için RESTful API test otomasyon framework'ü. Contract testing, schema validation ve performance testing özellikleri.</p>
+                    <p>Jenkins ile CI/CD pipeline entegrasyonu. Smoke ve Regression testlerinin otomatik çalışması için comprehensive test strategy implementation.</p>
                     <div class="project-tech">
-                        <span class="tech-badge">RestAssured</span>
-                        <span class="tech-badge">Python</span>
-                        <span class="tech-badge">Pytest</span>
-                        <span class="tech-badge">Allure</span>
+                        <span class="tech-badge">Jenkins</span>
+                        <span class="tech-badge">GitHub</span>
+                        <span class="tech-badge">Docker</span>
+                        <span class="tech-badge">Selenium Grid</span>
+                        <span class="tech-badge">Allure Reports</span>
                     </div>
-                    <p><strong>Sonuçlar:</strong> 500+ API endpoint'i için otomatik test coverage</p>
-                </div>
-            </div>
-            <div class="project-card fade-in">
-                <div class="project-header">
-                    <div class="project-title">Mobile Banking Test Suite</div>
-                </div>
-                <div class="project-content">
-                    <p>iOS ve Android mobil bankacılık uygulamaları için güvenlik ve fonksiyonel test otomasyon paketi.</p>
-                    <div class="project-tech">
-                        <span class="tech-badge">Appium</span>
-                        <span class="tech-badge">JavaScript</span>
-                        <span class="tech-badge">WebDriverIO</span>
-                        <span class="tech-badge">Cucumber</span>
-                        <span class="tech-badge">AWS Device Farm</span>
-                    </div>
-                    <p><strong>Sonuçlar:</strong> 20+ cihazda paralel test execution, %99 test güvenilirliği</p>
-                </div>
-            </div>
-            <div class="project-card fade-in">
-                <div class="project-header">
-                    <div class="project-title">Performance Testing Dashboard</div>
-                </div>
-                <div class="project-content">
-                    <p>Gerçek zamanlı performans metrikleri ve test sonuçları için interactive dashboard sistemi.</p>
-                    <div class="project-tech">
-                        <span class="tech-badge">JMeter</span>
-                        <span class="tech-badge">Grafana</span>
-                        <span class="tech-badge">InfluxDB</span>
-                        <span class="tech-badge">Python</span>
-                        <span class="tech-badge">Elasticsearch</span>
-                    </div>
-                    <p><strong>Sonuçlar:</strong> Gerçek zamanlı performans izleme, %50 daha hızlı problem tespiti</p>
+                    <p><strong>Sonuçlar:</strong> Automated test execution, parallel testing, detailed reporting dashboard</p>
                 </div>
             </div>
         </div>
@@ -580,43 +778,49 @@
                 <div class="timeline-title">Test Automation Engineer</div>
                 <div class="timeline-company">Birtech Technology - ESKİŞEHİR</div>
                 <p>• Selenium WebDriver ve Cucumber kullanarak Page Object Pattern ile sürdürülebilir UI test framework'ü tasarlama ve geliştirme</p>
-                <p>• Rest Assured ile API testleri ve JMeter ile performans testleri gerçekleştirme</p>
-                <p>• CI/CD pipeline'ına entegre test süreçleri</p>
+                <p>• REST Assured ile API testleri ve JMeter ile performans testleri gerçekleştirme</p>
+                <p>• CI/CD pipeline'ına entegre test süreçleri ve otomatik test raporlama sistemi kurulumu</p>
                 <p>• Angular tabanlı web uygulamalarında end-to-end test senaryoları oluşturma ve uygulama</p>
-                <p>• Jira ve Xray entegrasyonu ile test süreçlerinin yönetimi, detaylı raporlama ve test metrikleri analizi</p>
-                <p>• CI/CD süreçlerine test otomasyonunun entegrasyonu ve Jira üzerinden otomatik issue tracking ile projelerde test stratejilerinin belirlenmesi</p>
+                <p>• Jira ve XRAY entegrasyonu ile test süreçlerinin yönetimi, detaylı raporlama ve test metrikleri analizi</p>
+                <p>• CI/CD süreçlerine test otomasyonunun entegrasyonu ve projelerde test stratejilerinin belirlenmesi</p>
             </div>
+            
             <div class="timeline-item fade-in">
                 <div class="timeline-date">2023 - 2024</div>
                 <div class="timeline-title">Test Automation Engineer</div>
                 <div class="timeline-company">Piton Technology - ESKİŞEHİR</div>
                 <p>• Web ve mobil uygulamalar için kapsamlı test otomasyon framework geliştirme</p>
-                <p>• API testing ve contract testing implementations</p>
-                <p>• Agile/Scrum süreçlerinde aktif katılım ve sprint planning</p>
+                <p>• API testing ve contract testing implementations ile microservices test stratejileri</p>
+                <p>• Agile/Scrum süreçlerinde aktif katılım ve sprint planning activities</p>
                 <p>• Test data management ve test environment kurulum otomasyonu</p>
+                <p>• Cross-browser compatibility testing ve responsive design verification</p>
             </div>
+            
+            <div class="timeline-item fade-in">
+                <div class="timeline-date">2022 - 2023</div>
+                <div class="timeline-title">Test Automation Engineer</div>
+                <div class="timeline-company">Hypnotes - California (Remote)</div>
+                <p>• Therapist platform için BDD Cucumber automation framework implementation</p>
+                <p>• Gherkin ve Cucumber ile effective test automation ve comprehensive test scenarios</p>
+                <p>• Cross-functional teams ile collaboration ve software development lifecycle quality assurance</p>
+                <p>• JIRA XRAY kullanarak test management, test case organization ve release test plan management</p>
+                <p>• API testing using REST Assured library ve manual API testing using Postman</p>
+                <p>• GitHub integration, SQL database skills ve automated reporting systems</p>
+                <p>• Scrum ve Kanban agile methodology ve frameworks konusunda hands-on experience</p>
+            </div>
+            
             <div class="timeline-item fade-in">
                 <div class="timeline-date">2021 - 2024</div>
                 <div class="timeline-title">QA Engineer</div>
                 <div class="timeline-company">Upwork - Freelance</div>
-                <p>• QA Automation Tools : Selenium | Appium</p>
-                <p>• Test Frameworks : Cucumber BDD | TestNG | Junit | Rest Assured</p>
-                <p>• QA Support Tools : Jira | IntelliJ | Eclipse | VisualStudio</p>
-                <p>• Programming Skills. : Java | XPath | CSS | XML/JSON | SQL</p>
-                <p>• CI/CD Tools. : Jenkins | BitBucket | GitHub | Trello</p>
-                <p>• Bug tracking ve test case management sistemlerinin implementasyonu</p>
+                <p>• <strong>QA Automation Tools:</strong> Selenium, Appium ile comprehensive test automation</p>
+                <p>• <strong>Test Frameworks:</strong> Cucumber BDD, TestNG, JUnit, REST Assured implementations</p>
+                <p>• <strong>QA Support Tools:</strong> Jira, IntelliJ IDEA, Eclipse, Visual Studio ile development</p>
+                <p>• <strong>Programming Skills:</strong> Java, XPath, CSS, XML/JSON, SQL ile test development</p>
+                <p>• <strong>CI/CD Tools:</strong> Jenkins, BitBucket, GitHub, Trello ile project management</p>
+                <p>• Bug tracking ve test case management sistemlerinin implementation</p>
                 <p>• Cross-browser ve cross-platform compatibility testleri</p>
                 <p>• Regression testing ve smoke testing süreçlerinin otomasyonu</p>
-            </div>
-               <div class="timeline-item fade-in">
-                <div class="timeline-date">2022 - 2023</div>
-                <div class="timeline-title">Test Automation Engineer</div>
-                <div class="timeline-company">Hypnotes - California</div>
-                <p>• Hypnotes is a company who dedicated itself to provide the best experience and service to therapists.
-Roles, Responsibilities, Capabilities, excellent communication (written and verbal) skills, adaptation to uncertainty and change, planning and prioritizing work to meet commitments aligned with organizational goals, reviewing and analyzing system features and business requirements, participate in the development of testing strategies and plans, analyzing test scenarios in line with software development projects.</p>
-                <p>• Experience in BDD Cucumber automation framework, Gherkin and Cucumber for effective test automation, Creating and analyzing reports in Cucumber, Designing and writing test automation scripts according to the prepared test scenarios, Creating logs to document test phases and defects, Working with cross-functional teams to ensure quality throughout the software development lifecycle,
-Define and document test conditions, Knowledge and experience of Scrum and Kanban agile methodology and frameworks.</p>
-                <p>• Highly skilled in project management, knowledge sharing and collaboration tools (JIRA, Confluence, Trello, Google Drive, Slack, Zoom), Using XRAY for Test Management in Jira, Organizing test cases, integrating with test automation, managing release test plans, customizing reports, using Jira XRAY in test management, Hands-on knowledge with GitHub, Knowledge and practice of all aspects of planning, developing and executing the API, Experience with API testing using REST Assured library, Manual API testing using Postman, Perform API testing using automation tools such as Postman or Swagger UI, Smoke and Regression Testing in Jenkins, SQL database or relational database skills.</p>
             </div>
         </div>
     </section>
@@ -632,7 +836,7 @@ Define and document test conditions, Knowledge and experience of Scrum and Kanba
             <div class="contact-item fade-in">
                 <div class="contact-icon">💼</div>
                 <h3>LinkedIn</h3>
-                <p>in/yamangokhan/</p>
+                <p>linkedin.com/in/yamangokhan/</p>
             </div>
             <div class="contact-item fade-in">
                 <div class="contact-icon">🐱</div>
@@ -700,7 +904,7 @@ Define and document test conditions, Knowledge and experience of Scrum and Kanba
             const typing = setInterval(() => {
                 subtitle.textContent += text.charAt(i);
                 i++;
-                if (i > text.length - 1) {
+                if i > text.length - 1) {
                     clearInterval(typing);
                 }
             }, 100);
